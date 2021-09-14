@@ -1,0 +1,10 @@
+.wrapper {
+    display: grid;
+    padding: 2rem 5rem;
+    row-gap: 1em;
+  }
+  
+.content {
+    margin-top: 5rem;
+    min-height: 80vh;
+}
