@@ -42,12 +42,23 @@ export default function Home({ launches }) {
 								<Text strong>{launch.launch_site.site_name}</Text>
 							</div>
 
-							{launch.links.flickr_images.map((image) => (
-								<span key={image}>
-									<Image src={image} width={100} height={100} />
-									<Divider type='vertical' />
-								</span>
-							))}
+							<Image.PreviewGroup>
+								{launch.links.flickr_images.map((image) => (
+									<span key={image}>
+										<Image
+											loading='lazy'
+											src={image}
+											width={100}
+											height={100}
+											alt={launch.mission_name}
+											preview={{
+												src: image,
+											}}
+										/>
+										<Divider type='vertical' />
+									</span>
+								))}
+							</Image.PreviewGroup>
 							<Divider />
 						</div>
 					);
@@ -65,7 +76,7 @@ export async function getStaticProps() {
 	const { data } = await client.query({
 		query: gql`
 			query GetLaunches {
-				launchesPast(limit: 10) {
+				launchesPast(limit: 30) {
 					rocket {
 						rocket {
 							id
