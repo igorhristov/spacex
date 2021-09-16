@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { Layout} from 'antd';
-import Nav from './nav'
-// import {
-// 	CarryOutOutlined,
-// 	UserOutlined,
-// 	TeamOutlined,
-// 	FileOutlined,
-// 	RocketOutlined,
-// 	HomeOutlined,
-// } from '@ant-design/icons';
+import { Layout } from 'antd';
+import Nav from './nav';
+
 import Footer from './footer';
 
 const { Header, Content, Sider } = Layout;
@@ -22,41 +14,12 @@ const LayoutComponent = (props) => {
 	return (
 		<Layout style={{ minHeight: '100vh' }}>
 			<Sider
-				breakpoint='md'
+		breakpoint="sm"
 				collapsible
 				collapsed={collapsed}
 				onCollapse={toggleCollapsed}>
 				<div className='logo' />
-<Nav/>
-				{/* <Menu theme='dark' defaultSelectedKeys={['1']} mode='inline'>
-					<Menu.Item key='1' icon={<HomeOutlined />}>
-						<Link href='/' passHref>
-							Home
-						</Link>
-					</Menu.Item>
-					<Menu.Item key='2' icon={<CarryOutOutlined />}>
-						<Link href='/mission' passHref>
-							Past Missions
-						</Link>
-					</Menu.Item>
-					<Menu.Item key='2' icon={<RocketOutlined />}>
-						<Link href='/rocket' passHref>
-							Rockets
-						</Link>
-					</Menu.Item>
-					<SubMenu key='sub1' icon={<UserOutlined />} title='User'>
-						<Menu.Item key='3'>Tom</Menu.Item>
-						<Menu.Item key='4'>Bill</Menu.Item>
-						<Menu.Item key='5'>Alex</Menu.Item>
-					</SubMenu>
-					<SubMenu key='sub2' icon={<TeamOutlined />} title='Team'>
-						<Menu.Item key='6'>Team 1</Menu.Item>
-						<Menu.Item key='8'>Team 2</Menu.Item>
-					</SubMenu>
-					<Menu.Item key='9' icon={<FileOutlined />}>
-						Files
-					</Menu.Item>
-				</Menu> */}
+				<Nav />
 			</Sider>
 			<Layout className='site-layout'>
 				<Header className='site-layout-background' style={{ padding: 0 }} />

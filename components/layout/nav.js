@@ -1,32 +1,25 @@
 import React from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Menu } from 'antd';
 import {
 	CarryOutOutlined,
-	UserOutlined,
-	TeamOutlined,
-	FileOutlined,
 	RocketOutlined,
 	HomeOutlined,
 } from '@ant-design/icons';
 
 const Nav = () => {
+	const router = useRouter();
 	return (
-		<Menu theme='dark' defaultSelectedKeys={['1']} mode='inline'>
-			<Menu.Item key='1' icon={<HomeOutlined />}>
-				<Link href='/' passHref>
-					Home
-				</Link>
+		<Menu theme='dark' selectedKeys={router.pathname} mode='inline'>
+			<Menu.Item key='/' icon={<HomeOutlined />}>
+				<Link href='/'>Home</Link>
 			</Menu.Item>
-			<Menu.Item key='2' icon={<CarryOutOutlined />}>
-				<Link href='/mission' passHref>
-					Past Missions
-				</Link>
+			<Menu.Item key='/mission' icon={<CarryOutOutlined />}>
+				<Link href='/mission'>Past Missions</Link>
 			</Menu.Item>
-			<Menu.Item key='3' icon={<RocketOutlined />}>
-				<Link href='/rocket' passHref>
-					Rockets
-				</Link>
+			<Menu.Item key='/rocket' icon={<RocketOutlined />}>
+				<Link href='/rocket'>Rockets</Link>
 			</Menu.Item>
 		</Menu>
 	);

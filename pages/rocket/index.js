@@ -11,7 +11,7 @@ const Rockets = ({ rockets }) => {
 	return (
 		<LayoutComponent>
 			{rockets.map((rocket) => (
-				<Row>
+				<Row key={rocket.id}>
 					<Title>
 			
 						<Link href={`/rocket/${rocket.id}`}>
