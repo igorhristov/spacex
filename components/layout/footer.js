@@ -1,10 +1,12 @@
 import React from 'react';
+import { Layout, Menu, Breadcrumb, Button } from 'antd';
+const { Header, Content, Footer, Sider } = Layout;
 
 const footer = () => {
 	return (
-		<footer style={{ textAlign: 'center' }}>
+		<Footer style={{ textAlign: 'center' }}>
 			©2021 Created by Igor Hristov
-		</footer>
+		</Footer>
 	);
 };
 

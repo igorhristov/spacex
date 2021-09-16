@@ -1,7 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
-import { Button } from 'antd';
 import LayoutComponent from '../../components/layout';
 const RocketInfo = ({ rocket }) => {
 	const { company, description, name, engines, mass, height, cost_per_launch } =
@@ -12,9 +10,6 @@ const RocketInfo = ({ rocket }) => {
 	}
 	return (
 		<LayoutComponent>
-			<Link href='/'>
-				<Button type='primary'>Back</Button>
-			</Link>
 			<h2>Company: {company}</h2>
 			<h2>Rocket Name: {name}</h2>
 			<p>Description: {description}</p>
