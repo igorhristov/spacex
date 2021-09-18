@@ -7,19 +7,19 @@ import { RocketTwoTone } from '@ant-design/icons';
 import Link from 'next/link';
 
 const Rockets = ({ rockets }) => {
-	const { Title, Text } = Typography;
+	const { Title } = Typography;
 	return (
 		<LayoutComponent>
 			{rockets.map((rocket) => (
-				<Row key={rocket.id}>
-					<Title>
-			
+				<Row justify='center' style={{ minHeight: '12vh' }} align='middle'>
+					<Button type='link' size='large' key={rocket.id}>
 						<Link href={`/rocket/${rocket.id}`}>
-							<Button type='link' size='large'>
-								<RocketTwoTone twoToneColor="#eb2f96" /> {rocket.name}
-							</Button>
+							<Title onMouse>
+								<RocketTwoTone twoToneColor='#10239e' /> {rocket.name}{' '}
+								<RocketTwoTone twoToneColor='#10239e' />
+							</Title>
 						</Link>
-					</Title>
+					</Button>
 				</Row>
 			))}
 		</LayoutComponent>

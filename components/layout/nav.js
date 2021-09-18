@@ -11,17 +11,21 @@ import {
 const Nav = () => {
 	const router = useRouter();
 	return (
-		<Menu theme='dark' selectedKeys={router.pathname} mode='inline'>
-			<Menu.Item key='/' icon={<HomeOutlined />}>
-				<Link href='/'>Home</Link>
-			</Menu.Item>
-			<Menu.Item key='/mission' icon={<CarryOutOutlined />}>
-				<Link href='/mission'>Past Missions</Link>
-			</Menu.Item>
-			<Menu.Item key='/rocket' icon={<RocketOutlined />}>
-				<Link href='/rocket'>Rockets</Link>
-			</Menu.Item>
-		</Menu>
+			<Menu
+				theme='dark'
+				selectedKeys={router.pathname}
+				mode='horizontal'
+				defaultSelectedKeys={['/']}>
+				<Menu.Item key='/' icon={<HomeOutlined />}>
+					<Link href='/'>Home</Link>
+				</Menu.Item>
+				<Menu.Item key='/mission' icon={<CarryOutOutlined />}>
+					<Link href='/mission'>Past Missions</Link>
+				</Menu.Item>
+				<Menu.Item key='/rocket' icon={<RocketOutlined />}>
+					<Link href='/rocket'>Rockets</Link>
+				</Menu.Item>
+			</Menu>
 	);
 };
 

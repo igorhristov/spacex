@@ -1,37 +1,21 @@
-import React, { useState } from 'react';
-import { Layout } from 'antd';
+import React from 'react';
+import { Layout, Affix } from 'antd';
 import Nav from './nav';
-
 import Footer from './footer';
-
-const { Header, Content, Sider } = Layout;
+import Header from './header';
+const { Content } = Layout;
 
 const LayoutComponent = (props) => {
-	const [collapsed, setCollapsed] = useState(false);
-
-	const toggleCollapsed = () => setCollapsed(!collapsed);
-
 	return (
-		<Layout style={{ minHeight: '100vh' }}>
-			<Sider
-		breakpoint="sm"
-				collapsible
-				collapsed={collapsed}
-				onCollapse={toggleCollapsed}>
-				<div className='logo' />
+		<Layout className='layout'>
+			<Header />
+			<Affix>
 				<Nav />
-			</Sider>
-			<Layout className='site-layout'>
-				<Header className='site-layout-background' style={{ padding: 0 }} />
-				<Content style={{ margin: '0 16px' }}>
-					<div
-						className='site-layout-background'
-						style={{ padding: 24, minHeight: 360 }}>
-						{props.children}
-					</div>
-				</Content>
-				<Footer />
-			</Layout>
+			</Affix>
+			<Content>
+				<main className='site-layout-content'>{props.children}</main>
+			</Content>
+			<Footer />
 		</Layout>
 	);
 };
