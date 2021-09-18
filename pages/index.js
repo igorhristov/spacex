@@ -1,10 +1,9 @@
 import React from 'react';
 import LayoutComponent from '../components/layout';
-import { Button, Row, Typography } from 'antd';
+import { Button, Row, Typography, Image } from 'antd';
 import { RocketTwoTone, ScheduleTwoTone } from '@ant-design/icons';
 import Link from 'next/link';
 
-import Image from 'next/image';
 const Home = () => {
 	const { Title } = Typography;
 
@@ -13,9 +12,10 @@ const Home = () => {
 			<Row justify='center' style={{ minHeight: '20vh' }}>
 				<Image
 					src='https://upload.wikimedia.org/wikipedia/commons/d/de/SpaceX-Logo.svg'
-					layout='intrinsic'
+					preview={false}
 					width={300}
 					height={40}
+					alt='spaceX'
 				/>
 			</Row>
 			<Row justify='center'>

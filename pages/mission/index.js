@@ -4,18 +4,15 @@ import { Row, Col, Card, Pagination } from 'antd';
 import { RocketOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import LayoutComponent from '../../components/layout';
-// import PaginationUtil from '../../components/pagination';
 
 export default function Missions({ launches, totalLaunches }) {
 	const [data, setData] = useState([]);
-	// const [totalPage, setTotalPage] = useState(0);
 	const [current, setCurrent] = useState(1);
 	const [pageSize, setPageSize] = useState(6);
 	const [minIndex, setMinIndex] = useState(0);
 	const [maxIndex, setMaxIndex] = useState(0);
 	useEffect(() => {
 		setData(launches);
-		// setTotalPage(totalLaunches / pageSize);
 		setMinIndex(0);
 		setMaxIndex(pageSize);
 	}, []);
